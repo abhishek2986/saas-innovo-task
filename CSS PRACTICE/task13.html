@@ -1,0 +1,43 @@
+<!-- Task 13: Background Styling
+Apply background colors, gradients, and images to HTML elements:
+Create a gradient background for a section
+Add a background image to a div -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.section {
+  height: 200px;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.image-box {
+     width: 400px;
+  height: 400px;
+  background-image: url("../HTML PRACTICE/images/profile.jpeg");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  border: #000000;
+  background-color: lightgray; /* shows empty space */
+
+}
+</style>
+</head>
+
+<body>
+
+<section class="section">
+  <h2>Gradient Background</h2>
+</section>
+<br>
+<br>
+
+<div class="image-box"></div>
+
+</body>
+</html>

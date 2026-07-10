@@ -1,0 +1,53 @@
+<!-- Task 4: Hyperlinks and Images
+Create an HTML document with the following:
+Multiple hyperlinks (<a>) to different websites, including internal and external links
+An internal link that navigates to a specific section within the same page
+Add images (<img>) with appropriate src attributes for online and offline images -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hyperlinks and Images</title>
+</head>
+<body>
+
+    <h1 id="top">My Web Page</h1>
+
+    <!-- External Links -->
+    <h2>External Links</h2>
+    <a href="https://www.google.com" target="_blank">Visit Google</a><br>
+    <a href="https://www.github.com" target="_blank">Visit GitHub</a><br>
+
+    <!-- Internal Link to another page -->
+    <h2>Internal Link</h2>
+    <a href="task3.html">Go to task3 Page</a>
+
+    <br><br>
+
+    <!-- Internal link to a section on the same page -->
+    <h2>Page Navigation</h2>
+    <a href="#contact">Go to Contact Section</a>
+
+    <br><br><br>
+
+    <h2>Profile Section</h2>
+    <p>This is my profile information.</p>
+
+    <!-- Offline Image -->
+    <h3>Offline Image</h3>
+    <img src="profile.jpg" alt="My Profile Photo" width="150">
+
+    <!-- Online Image -->
+    <h3>Online Image</h3>
+    <img src="https://www.w3.org/Icons/w3c_home.png" 
+         alt="Online Image" width="150">
+
+    <br><br><br>
+
+    <!-- Target Section -->
+    <h2 id="contact">Contact Section</h2>
+    <p>Email: example@gmail.com</p>
+
+    <a href="#top">Back to Top</a>
+
+</body>
+</html>

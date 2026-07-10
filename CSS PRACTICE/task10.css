@@ -1,0 +1,7 @@
+li {
+    color: rgb(65, 44, 1);
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    margin: 5px 0;
+    list-style-type: square;
+}

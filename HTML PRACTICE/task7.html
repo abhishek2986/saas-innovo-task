@@ -1,0 +1,48 @@
+<!-- Task 7: Registration Form
+Create a registration form with the following fields:
+Name, Email, Password, Confirm Password
+Gender (radio buttons)
+Hobbies (checkboxes)
+Country (dropdown menu)
+Submit button -->
+<form>
+
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name">
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email">
+    <br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password">
+    <br><br>
+
+    <label for="confirm_password">Confirm Password:</label>
+    <input type="password" name="confirm_password" id="confirm_password">
+    <br><br>
+
+    <label>Gender:</label>
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <br><br>
+
+    <label>Hobbies:</label>
+    <input type="checkbox" name="hobby" value="Reading"> Reading
+    <input type="checkbox" name="hobby" value="Music"> Music
+    <input type="checkbox" name="hobby" value="Sports"> Sports
+    <br><br>
+
+    <label>Country:</label>
+    <select name="country">
+        <option>India</option>
+        <option>USA</option>
+        <option>UK</option>
+        <option>Canada</option>
+    </select>
+    <br><br>
+
+    <input type="submit" value="Register">
+
+</form>
