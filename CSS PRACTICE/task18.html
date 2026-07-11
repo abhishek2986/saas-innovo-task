@@ -1,0 +1,98 @@
+<!-- Task 18: Flexbox Layout
+Create a responsive layout using CSS Flexbox:
+Design a flexible navigation bar with flex properties
+Create a multi-column layout that adapts to different screen sizes -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flexbox Responsive Layout</title>
+<style>/* Navigation Bar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    gap: 20px;
+}
+
+
+/* Multi Column Layout */
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.column {
+    flex: 1;
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+}</style></head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <h2>My Website</h2>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <div class="box">
+            <h3>Column 1</h3>
+            <p>This is the first column.</p>
+        </div>
+
+        <div class="box">
+            <h3>Column 2</h3>
+            <p>This is the second column.</p>
+        </div>
+
+        <div class="box">
+            <h3>Column 3</h3>
+            <p>This is the third column.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

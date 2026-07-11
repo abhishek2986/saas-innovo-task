@@ -1,0 +1,64 @@
+<!-- Task 17: Hover Effects and Transitions
+Create hover effects for buttons and icons:
+Use CSS transitions to animate the hover effects -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effect</title>
+
+    <style>
+        body {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        /* Button */
+        .btn {
+            background-color: blue;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+
+            /* makes animation smooth */
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: red;
+
+            /* makes button bigger */
+            transform: scale(1.2);
+        }
+
+
+        /* Icon */
+        .icon {
+            margin-top: 50px;
+            font-size: 50px;
+            color: gray;
+
+            /* smooth effect */
+            transition: 1s;
+        }
+
+        .icon:hover {
+            color: orange;
+
+            /* rotate icon */
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="btn">Hover Me</button>
+
+    <div class="icon">★</div>
+
+</body>
+</html>
+</html>
