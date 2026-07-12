@@ -1,0 +1,163 @@
+<!-- Practical Task: Personal Portfolio Website
+Objective: Create a personal portfolio website that showcases your skills, projects, and contact information using HTML and CSS.
+Description: In this practical task, you will build a complete personal portfolio website. This project will help you apply various HTML and CSS concepts, including page structure, forms, tables, semantic elements, styling, positioning, and responsive design. -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="PRAC6.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>Abhishek Patil</h1>
+      <p>Aspiring Full Stack Developer</p>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- About -->
+    <section id="about">
+      <h2>About Me</h2>
+      <img src="../HTML PRACTICE/images/profile.jpeg" alt="Profile Photo" />
+      <p>
+        Hello! I am Abhishek Patil, a final-year IT student. I enjoy creating
+        responsive websites using HTML, CSS, JavaScript, React, Node.js, and
+        PostgreSQL.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
+
+      <table>
+        <tr>
+          <th>Skill</th>
+          <th>Level</th>
+        </tr>
+
+        <tr>
+          <td>HTML</td>
+          <td>Advanced</td>
+        </tr>
+
+        <tr>
+          <td>CSS</td>
+          <td>Intermediate</td>
+        </tr>
+
+        <tr>
+          <td>JavaScript</td>
+          <td>Intermediate</td>
+        </tr>
+
+        <tr>
+          <td>React</td>
+          <td>Intermediate</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="project-card">
+        <h3>AI-Enabled Smart Restaurant Management System</h3>
+        <p>
+          Developed a complete restaurant management system featuring QR Code
+          Menu, Waiter Order Management, Kitchen Display System, Table Billing,
+          Admin Dashboard, JWT Authentication, and PostgreSQL database.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Developer Portfolio Website</h3>
+        <p>
+          Designed and developed a responsive personal portfolio website
+          showcasing my skills, projects, resume, and contact information using
+          HTML, CSS, and JavaScript.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Smart Todo Manager</h3>
+        <p>
+          Created a responsive Todo application with features like adding,
+          updating, deleting, searching, and filtering tasks using React.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>AI Voice Agent for Restaurant Automation</h3>
+        <p>
+          Built an AI Voice Agent to automate restaurant table reservations and
+          customer inquiries using voice interaction, reducing manual work and
+          improving customer experience.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>AI-Powered Complaint & Feedback Automation</h3>
+        <p>
+          Built an automation workflow using n8n that collects customer
+          complaints, classifies them with Google Gemini AI, stores data in
+          Google Sheets, sends Slack notifications, and emails customers
+          automatically.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Education Analytics Dashboard</h3>
+        <p>
+          Developed an interactive Tableau dashboard to analyze student
+          performance, revenue, expenses, and profits using charts, KPIs, and
+          filters.
+        </p>
+      </div>
+
+      <div class="project-card">
+          <h3>AI Resume Analyzer & ATS Match Checker</h3>
+          <p>
+            Developed an AI-powered Resume Analyzer that compares a candidate's
+            resume with a Job Description (JD) to calculate the ATS match score,
+            identify missing skills, recommend improvements, and provide
+            personalized suggestions to increase the chances of getting
+            shortlisted for interviews.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+
+      <form>
+        <label>Name</label>
+        <input type="text" placeholder="Enter your name" />
+
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email" />
+
+        <label>Message</label>
+        <textarea rows="5" placeholder="Write your message"></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 Abhishek Patil | All Rights Reserved</p>
+    </footer>
+  </body>
+</html>

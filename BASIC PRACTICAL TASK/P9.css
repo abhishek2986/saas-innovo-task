@@ -1,0 +1,26 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  background: lightgray;
+}
+
+.dropdown:hover .menu {
+  display: block;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.menu a:hover {
+  background: gray;
+  color: white;
+}
