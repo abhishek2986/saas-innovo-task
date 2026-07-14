@@ -1,0 +1,47 @@
+<!-- /* 3 .Task: Display and Search a List of Users in a Table Using External API
+Objective:
+Create a JavaScript application that fetches a list of users from an external API, displays the users in a table, and allows the user to search through the list by name.
+
+Taken a API from Here  - https://jsonplaceholder.typicode.com/ */ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="TASK3.css"/>
+</head>
+<body>
+    <h1>Task: Display and Search a List of Users in a Table Using External API</h1>
+    <br>
+    <br><div>
+        <input type="text" id="search"/>
+        <button type="submit">submit</button>
+    </div>
+    <br>
+    <br>
+    
+    <table>
+        <thead>
+
+            <tr>
+                <th>
+                    id
+                </th>
+                <th>
+                    name
+                </th>
+                <th>
+                    Phone
+                </th>
+                <th>
+                    email
+                </th>
+            </tr>
+        </thead>
+            <tbody id="userlist"></tbody>
+        
+    </table>
+    <script src="TASK3.JS"></script>
+</body>
+</html>
