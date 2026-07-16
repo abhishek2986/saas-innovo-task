@@ -3,7 +3,7 @@ const checkbox=document.getElementById("checkbox");
 const submitbutton=document.getElementById("submit");
 const tasklist=document.getElementById("tasklist");
 const randomIndex = Math.floor(Math.random() * 10);
-
+const searchfiled=document.getElementById("search");
 const taskslist=JSON.parse(localStorage.getItem("tasks")) || [];
 let editIndex=null;
 
@@ -15,7 +15,7 @@ tasks.forEach((element,index) => {
     li.innerHTML=`
     <div>id : ${element.id}</div>
     <div>description : ${element.description}</div>
-    <div>task status : ${element.status ? "completed" : "incomplete"}`
+    <div id="taskstatus">task status : ${element.status ? "complete" : "incomplete"}`
     tasklist.append(li);
     
     const deletebutton=document.createElement("button");
@@ -77,5 +77,45 @@ submitbutton.textContent="submit"
     input.value = "";
     checkbox.checked = false;
 }
+
 }
 taskdisplay();
+
+// searchfiled.addEventListener("input",function(){
+// if(searchfiled.value===""){
+//     taskdisplay();
+// }else{
+
+//   const searchList = taskslist.filter((ele) => {
+//     return (ele.status ? "completed task" : "incomplete task")
+//         .toLowerCase()
+//         .includes(searchfield.value.toLowerCase());
+// });
+//     taskdisplay(searchList);
+// }
+// })
+
+    
+
+ searchfiled.addEventListener("change", function () {
+
+    if (searchfiled.value === "") {
+        taskdisplay();
+        return;
+    }
+
+    const searchList = taskslist.filter((ele) => {
+
+        if (searchfiled.value === "Complete Task") {
+            return ele.status==true;
+        }
+
+        if (searchfiled.value === "Incomplete Task") {
+            return ele.status==false;
+        }
+
+    });
+
+    taskdisplay(searchList);
+
+});
