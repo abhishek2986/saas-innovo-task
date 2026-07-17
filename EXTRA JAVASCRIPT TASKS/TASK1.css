@@ -1,0 +1,22 @@
+#quotes{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#button{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+button{
+    color: rgb(10, 10, 10);
+    background-color: antiquewhite;
+    
+}
+#quotes_container{
+   
+    background-color: rgb(75, 138, 138);
+}
+#quotes{
+    color: azure;
+}

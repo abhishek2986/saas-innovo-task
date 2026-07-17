@@ -1,0 +1,9 @@
+#result{
+    margin-top: 50px;
+}
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
