@@ -1,0 +1,14 @@
+#gallery{
+display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+}
+.image{
+    display: flex;
+    flex-direction: column;
+}
+#container{
+    display: flex;
+    flex-direction: row;
+}
