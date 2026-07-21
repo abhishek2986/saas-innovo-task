@@ -2,13 +2,31 @@
 display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: flex-start;
+  justify-content: flex-start;    
 }
+
 .image{
     display: flex;
     flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+    gap:10px;
+      border: 1px solid black;
+
 }
 #container{
     display: flex;
     flex-direction: row;
 }
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#urlform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:12px;
+}
+

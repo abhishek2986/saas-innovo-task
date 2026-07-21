@@ -1,0 +1,41 @@
+#inputform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#frequency_word{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#title_frequency{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#average_word_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#average_count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#avg{
+    margin: 15px;
+}
