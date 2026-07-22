@@ -1,0 +1,30 @@
+.dragposition{
+width: 100px;
+  height: 50px;
+  background-color: blue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+#todoresult{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    gap: 12px;
+}
+#todoform{
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:12px;
+}
+h1{
+      display: flex;
+    justify-content: center;
+    align-items: center;
+}
