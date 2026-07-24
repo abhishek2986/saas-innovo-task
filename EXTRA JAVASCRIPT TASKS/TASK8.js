@@ -19,12 +19,27 @@ function dragoverHandler(ev) {
 function dropHandler(ev){
       ev.preventDefault();
   const data = ev.dataTransfer.getData("text");
-  const container = ev.target.closest(".dragposition");
+  const element=document.getElementById(data); //element that we drag
+  console.log(element.textContent)
+  const text=element.textContent.replace("■","").trim();
+  console.log(text);
 
+  const oldindex= array.indexOf(text); //to find out the index of current text that we drag
+console.log(oldindex);
+
+  const container = ev.target.closest(".dragposition");      
+  const a_text= ev.target.closest(".dragposition").textContent.replace("■","").trim();   //block of text where we append the our task;
+  console.log(a_text);
+  const newindex=array.indexOf(a_text);
+           console.log(array);
+array.splice(oldindex,1);
+array.splice(newindex,0,text);
+console.log(array);
             container.append(document.getElementById(data));
 }
 
 
+//SUBMIT BUTTON EVENT
 
 submitbutton.onclick=function(){
     if(todoinput.value.trim()==""){
@@ -36,7 +51,8 @@ todoinput.value="";
 Displaytodo();
 }
 
-// Displaytodo();
+// Displaytodo() FUNCTION ;
+
 function Displaytodo() {
     todoresult.innerHTML = "";
 
@@ -62,13 +78,13 @@ div.addEventListener("drop", dropHandler);
 
 
 // Drag task
-//    ↓
+  
 // Find old position
-//    ↓
+  
 // Remove item from array
-//    ↓
+    
 // Insert item at new position
-//    ↓
+    
 // Save updated array
-//    ↓
+   
 // Add new tasks to this updated array
