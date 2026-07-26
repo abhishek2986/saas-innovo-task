@@ -1,0 +1,35 @@
+<!-- Quiz Application Task: Create a quiz application that allows users to answer multiple-choice questions. 
+Requirements:
+User Interface:
+A question displayed with multiple-choice answers.
+A button to submit the answer.
+A display of the user's current score and question number.
+Functionality:
+Present questions one at a time.
+Move to the next question after an answer is submitted.
+Display the final score after the last question. -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Application Task: Create a quiz application</title>
+    <link rel="stylesheet" href="TASK10.css" />
+  </head>
+  <body>
+    <h1>Quiz Application</h1>
+    <div id="quiz-container">
+      <p id="question-number"></p>
+      <p id="score"></p>
+      <div id="question-container">
+        <p id="question"></p>
+        <div id="answers"></div>
+      </div>
+      <br />
+      <button id="submit-btn">Submit Answer</button>
+    </div>
+
+    <script type="module" src="TASK10.js"></script>
+  </body>
+</html>

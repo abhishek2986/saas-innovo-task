@@ -10,26 +10,32 @@ Check if the guess is correct and provide hints.
 Track the number of attempts and display it.
 Allow the user to play again after guessing correctly. -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Guess the Number Game Task:</title>
-    <link rel="stylesheet" href="TASK9.css"/>
-</head>
-<body>
-    <h1>Guess the Number Game Task: </h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Number Game Task:</title>
+    <link rel="stylesheet" href="TASK9.css" />
+  </head>
+  <body>
+    <marquee direction="Left" scrollamount="10">
+      📌 Every three attempts 10 points will be Minus
+    </marquee>
+    <h1>Guess the Number Game Task:</h1>
     <div id="container">
-        <div id="inputform">
-            <label for="inputtext">Enter the Number : </label>
-            <input type="number" id="inputtext" />
-            <button type="submit" id="submit">Submit Number</button>
-        </div>
+      <div id="inputform">
+        <label for="inputtext">Enter the Number : </label>
+        <input type="number" id="inputtext" />
+        <button type="submit" id="submit">Submit Number</button>
+      </div>
+      <br />
+      <div id="resultcontainer">
         <div id="suggestion"></div>
         <div id="score"></div>
         <div id="attempts"></div>
+      </div>
     </div>
-    <script src="TASK9.js"> </script>
-</body>
+    <script src="TASK9.js"></script>
+  </body>
 </html>
