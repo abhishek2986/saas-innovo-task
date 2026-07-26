@@ -2,33 +2,34 @@
 Block-levelock-level elements: <div>, <h1>, <p>, <ul>, <li>
 Inline elements: <span>, <a>, <strong>, <em>
 Nest a list (<ul> with <li>) within another list -->
-<!DOCTYPE html>
+
+<!doctype html>
 <html>
-<head>
-  <title>Student Information</title>
-</head>
-<body>
+  <head>
+    <title>Student Information</title>
+  </head>
+  <body>
+    <div>
+      <h1>Student Profile</h1>
+      <p>Name: <strong>John</strong></p>
+      <p>Course: <em>Web Development</em></p>
 
-  <div>
-    <h1>Student Profile</h1>
-    <p>Name: <strong>John</strong></p>
-    <p>Course: <em>Web Development</em></p>
+      <ul>
+        <li>
+          Skills
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+          </ul>
+        </li>
+        <li>Hobbies</li>
+      </ul>
+    </div>
 
-    <ul>
-      <li>Skills
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-        </ul>
-      </li>
-      <li>Hobbies</li>
-    </ul>
-  </div>
-
-  <p>
-    Visit my <a href="#">portfolio</a>
-    <span>for more details.</span>
-  </p>
-
-</body>
+    <p>
+      Visit my
+      <a href="https://abhishek-patil-dev-portfolio.netlify.app/">portfolio</a>
+      <span>for more details.</span>
+    </p>
+  </body>
 </html>

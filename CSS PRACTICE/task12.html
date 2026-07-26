@@ -1,53 +1,56 @@
-<!DOCTYPE html>
+<!-- Task 12: Box Model Design
+Create an HTML document and design a box using CSS:
+Apply padding, border, and margin
+Demonstrate how each property affects the element's layout -->
+
+<!doctype html>
 <html>
-<head>
+  <head>
     <title>CSS Box Model Demo</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
 
-        .box {
-            width: 200px;
-            height: 100px;
+      .box {
+        width: 200px;
+        height: 100px;
 
-            /* Space inside the element between content and border */
-            padding: 30px;
+        /* Space inside the element between content and border */
+        padding: 30px;
 
-            /* Line surrounding the padding and content */
-            border: 10px solid blue;
+        /* Line surrounding the padding and content */
+        border: 10px solid blue;
 
-            /* Space outside the border separating it from other elements */
-            margin: 50px;
+        /* Space outside the border separating it from other elements */
+        margin: 50px;
 
-            background-color: lightgreen;
-        }
+        background-color: lightgreen;
+      }
 
-        .label {
-            color: darkred;
-            font-weight: bold;
-        }
+      .label {
+        color: darkred;
+        font-weight: bold;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <h1>CSS Box Model Example</h1>
 
     <p class="label">The green area is the content + padding area.</p>
 
-    <div class="box">
-        This is the content area of the box.
-    </div>
+    <div class="box">This is the content area of the box.</div>
 
     <p>
-        <b>Effect of CSS properties:</b><br>
-        1. <b>Padding:</b> Adds space inside the box around the content.<br>
-        2. <b>Border:</b> Adds a visible boundary around the padding and content.<br>
-        3. <b>Margin:</b> Adds space outside the border, pushing the box away from other elements.
+      <b>Effect of CSS properties:</b><br />
+      1. <b>Padding:</b> Adds space inside the box around the content.<br />
+      2. <b>Border:</b> Adds a visible boundary around the padding and
+      content.<br />
+      3. <b>Margin:</b> Adds space outside the border, pushing the box away from
+      other elements.
     </p>
-
-</body>
+  </body>
 </html>

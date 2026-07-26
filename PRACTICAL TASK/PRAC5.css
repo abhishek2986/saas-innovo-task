@@ -23,7 +23,7 @@ nav a {
   margin: 15px;
 }
 a:hover {
-  background-color: gray;
+  background-color: rgb(0, 145, 27);
 }
 a:active {
   background-color: rgba(237, 164, 5, 0.867);

@@ -7,23 +7,28 @@
     gap: 100px;
 } */
 
- .form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
- }
- #tasklist{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap:50px;
- }
- .buttons{
-     margin-top: 10px;
-     display: flex;
-     flex-direction: row;
-     gap:10px
-     
- }
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#tasklist {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.buttons {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+#taskcontain_heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

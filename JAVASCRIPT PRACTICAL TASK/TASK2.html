@@ -4,27 +4,32 @@ Create a simple To-Do list application that allows users to:
 Add new tasks.
 Mark tasks as completed.
 Delete tasks -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> To-Do List Application</title>
-    <link rel="stylesheet" href="TASK2.css">
-</head>
-<body>
-    <div id="todo-container">
-        <h1>To-Do List Application</h1>
-    <form onsubmit="event.preventDefault()">
-        <label for="add_task">Enter a task :</label>
-        <input type="text" name="add_task" id="add_task"/>
-        <input type="submit" value="submit" id="submitbtn" onclick="SubmitEventt()"/>
-    </form>
-<div id="todolist-container">
-    <ul id="todo-list">
-    </ul>
-</div>    </div>
-    <script src="TASK2.JS"></script>
-</body>
-</html>
 
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List Application</title>
+    <link rel="stylesheet" href="TASK2.css" />
+  </head>
+  <body>
+    <div id="todo-container">
+      <h1>To-Do List Application</h1>
+      <form onsubmit="event.preventDefault()">
+        <label for="add_task">Enter a task :</label>
+        <input type="text" name="add_task" id="add_task" />
+        <input
+          type="submit"
+          value="submit"
+          id="submitbtn"
+          onclick="SubmitEventt()"
+        />
+      </form>
+      <div id="todolist-container">
+        <ul id="todo-list"></ul>
+      </div>
+    </div>
+    <script src="TASK2.JS"></script>
+  </body>
+</html>

@@ -1,12 +1,25 @@
-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-h1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#input {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+#input small {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  color: red;
+  font-size: 13px;
 }

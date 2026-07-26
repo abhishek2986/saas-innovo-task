@@ -1,3 +1,4 @@
+// Get references to all required HTML elements
 const recipeName = document.getElementById("inputtext");
 const ingredients = document.getElementById("ingredients");
 const category = document.getElementById("category");
@@ -7,19 +8,21 @@ const recipeList = document.getElementById("recipelist");
 const searchInput = document.getElementById("searchIngredient");
 const filterCategory = document.getElementById("filterCategory");
 
+// Load recipes from localStorage, or use an empty array if none exist
 let recipes = JSON.parse(localStorage.getItem("recipes")) || [];
 let editIndex = null;
 
-// Display Recipes
+// ==================== Display Recipes ====================
 function displayRecipes(recipeArray = recipes) {
+  // Clear the current recipe list before rendering
+  recipeList.innerHTML = "";
 
-    recipeList.innerHTML = "";
+  // Loop through each recipe and create its UI
+  recipeArray.forEach((recipe, index) => {
+    const li = document.createElement("li");
 
-    recipeArray.forEach((recipe, index) => {
-
-        const li = document.createElement("li");
-
-        li.innerHTML = `
+    // Add recipe details
+    li.innerHTML = `
             <div class="recipe-name">${recipe.name}</div>
             <div class="recipe-details">
                 <strong>Ingredients:</strong> ${recipe.ingredients}
@@ -29,144 +32,109 @@ function displayRecipes(recipeArray = recipes) {
             </div>
         `;
 
-        const buttonDiv = document.createElement("div");
-        buttonDiv.classList.add("recipe-buttons");
+    const buttonDiv = document.createElement("div");
+    buttonDiv.classList.add("recipe-buttons");
 
-        const editBtn = document.createElement("button");
-        editBtn.textContent = "Edit";
-        editBtn.classList.add("edit-btn");
+    // Create Edit button
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+    editBtn.classList.add("edit-btn");
 
-        const deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "Delete";
-        deleteBtn.classList.add("delete-btn");
+    // Create Delete button
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.classList.add("delete-btn");
 
-        buttonDiv.append(editBtn);
-        buttonDiv.append(deleteBtn);
+    // Add buttons inside the button container
+    buttonDiv.append(editBtn);
+    buttonDiv.append(deleteBtn);
 
-        li.append(buttonDiv);
+    li.append(buttonDiv);
 
-        recipeList.append(li);
+    recipeList.append(li);
 
-        // Delete
-        deleteBtn.onclick = function () {
+    // ==================== Delete Recipe ====================
+    deleteBtn.onclick = function () {
+      recipes.splice(index, 1);
 
-            recipes.splice(index, 1);
+      // Save updated data to localStorage
+      localStorage.setItem("recipes", JSON.stringify(recipes));
 
-            localStorage.setItem("recipes", JSON.stringify(recipes));
-
-            displayRecipes();
-        };
-
-        // Edit
-        editBtn.onclick = function () {
-
-            recipeName.value = recipe.name;
-            ingredients.value = recipe.ingredients;
-            category.value = recipe.category;
-
-            editIndex = index;
-
-            submitBtn.textContent = "Update Recipe";
-        };
-
-    });
-
-}
-
-// Add / Update
-submitBtn.onclick = function () {
-
-    if (
-        recipeName.value.trim() === "" ||
-        ingredients.value.trim() === "" ||
-        category.value === ""
-    ) {
-
-        alert("Please fill all fields");
-        return;
-    }
-
-    const recipe = {
-
-        name: recipeName.value,
-        ingredients: ingredients.value,
-        category: category.value
+      displayRecipes();
     };
 
-    if (editIndex === null) {
+    // ==================== Edit Recipe ====================
+    editBtn.onclick = function () {
+      recipeName.value = recipe.name;
+      ingredients.value = recipe.ingredients;
+      category.value = recipe.category;
 
-        recipes.push(recipe);
+      editIndex = index;
 
-    } else {
+      submitBtn.textContent = "Update Recipe";
+    };
+  });
+}
 
-        recipes[editIndex] = recipe;
-        editIndex = null;
-        submitBtn.textContent = "Add Recipe";
+// ==================== Add / Update Recipe ====================
+submitBtn.onclick = function () {
+  if (
+    recipeName.value.trim() === "" ||
+    ingredients.value.trim() === "" ||
+    category.value === ""
+  ) {
+    alert("Please fill all fields");
+    return;
+  }
 
-    }
+  // Create a recipe object
+  const recipe = {
+    name: recipeName.value,
+    ingredients: ingredients.value,
+    category: category.value,
+  };
 
-    localStorage.setItem("recipes", JSON.stringify(recipes));
+  if (editIndex === null) {
+    recipes.push(recipe);
+  } else {
+    recipes[editIndex] = recipe;
+    editIndex = null;
+    submitBtn.textContent = "Add Recipe";
+  }
 
-    recipeName.value = "";
-    ingredients.value = "";
-    category.value = "";
+  localStorage.setItem("recipes", JSON.stringify(recipes));
 
-    displayRecipes();
+  recipeName.value = "";
+  ingredients.value = "";
+  category.value = "";
 
+  displayRecipes();
 };
 
-// Search by Ingredient
+// ==================== Search by Ingredient ====================
 searchInput.addEventListener("keyup", function () {
+  const searchValue = searchInput.value.toLowerCase();
 
-    const searchValue = searchInput.value.toLowerCase();
+  const filteredRecipes = recipes.filter((recipe) =>
+    recipe.ingredients.toLowerCase().includes(searchValue),
+  );
 
-    const filteredRecipes = recipes.filter(recipe =>
-        recipe.ingredients.toLowerCase().includes(searchValue)
+  displayRecipes(filteredRecipes);
+});
+
+// ==================== Filter by Category ====================
+filterCategory.addEventListener("change", function () {
+  if (filterCategory.value === "") {
+    displayRecipes();
+  } else {
+    const filteredRecipes = recipes.filter(
+      (recipe) => recipe.category === filterCategory.value,
     );
 
     displayRecipes(filteredRecipes);
-
+  }
 });
 
-// Filter by Category
-filterCategory.addEventListener("change", function () {
+// ==================== Initial Display ====================
 
-    if (filterCategory.value === "") {
-
-        displayRecipes();
-
-    } else {
-
-        const filteredRecipes = recipes.filter(recipe =>
-            recipe.category === filterCategory.value
-        );
-
-        displayRecipes(filteredRecipes);
-
-    }
-
-});
-
-// Show saved recipes
 displayRecipes();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

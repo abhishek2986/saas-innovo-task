@@ -1,118 +1,96 @@
 <!-- Task 16: Positioning Elements
 Position elements using CSS positioning properties:
 Create a layout with static, relative, absolute, and fixed positioned elements -->
-<!DOCTYPE html>
+
+<!doctype html>
 <html>
-<head>
-<title>Position and Scrolling</title>
+  <head>
+    <title>Position and Scrolling</title>
 
-<style>
+    <style>
+      body {
+        height: 1200px; /* creates scrolling */
+        font-family: Arial;
+      }
 
-body {
-    height: 1200px; /* creates scrolling */
-    font-family: Arial;
-}
+      /* Fixed box */
+      .fixed {
+        width: 120px;
+        height: 50px;
+        background: red;
+        color: white;
+        text-align: center;
+        line-height: 50px;
 
-/* Fixed box */
-.fixed {
-    width: 120px;
-    height: 50px;
-    background: red;
-    color: white;
-    text-align: center;
-    line-height: 50px;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+      }
 
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-}
+      /* Relative parent */
+      .container {
+        width: 400px;
+        height: 300px;
+        background: lightgray;
+        margin: 100px;
+        position: relative;
+      }
 
+      /* Normal box */
+      .normal {
+        width: 100px;
+        height: 100px;
+        background: blue;
+        color: white;
+        text-align: center;
+        line-height: 100px;
+      }
 
-/* Relative parent */
-.container {
-    width: 400px;
-    height: 300px;
-    background: lightgray;
-    margin: 100px;
-    position: relative;
-}
+      /* Absolute box */
+      .absolute {
+        width: 100px;
+        height: 100px;
+        background: green;
+        color: white;
+        text-align: center;
+        line-height: 100px;
 
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
 
-/* Normal box */
-.normal {
-    width: 100px;
-    height: 100px;
-    background: blue;
-    color: white;
-    text-align: center;
-    line-height: 100px;
-}
+      /* Relative box */
+      .relative {
+        width: 100px;
+        height: 100px;
+        background: orange;
+        color: white;
+        text-align: center;
+        line-height: 100px;
 
+        position: relative;
+        left: 50px;
+      }
+    </style>
+  </head>
 
-/* Absolute box */
-.absolute {
-    width: 100px;
-    height: 100px;
-    background: green;
-    color: white;
-    text-align: center;
-    line-height: 100px;
+  <body>
+    <h2>Scroll the page ↓</h2>
 
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
+    <h2>Relative Example</h2>
 
+    <div class="relative">Relative</div>
 
-/* Relative box */
-.relative {
-    width: 100px;
-    height: 100px;
-    background: orange;
-    color: white;
-    text-align: center;
-    line-height: 100px;
+    <h2>Absolute Example</h2>
 
-    position: relative;
-    left: 50px;
-}
+    <div class="container">
+      <div class="normal">Normal</div>
 
-</style>
-
-</head>
-
-<body>
-
-<h2>Scroll the page ↓</h2>
-
-
-<h2>Relative Example</h2>
-
-<div class="relative">
-    Relative
-</div>
-
-
-<h2>Absolute Example</h2>
-
-<div class="container">
-
-    <div class="normal">
-        Normal
+      <div class="relative">Absolute</div>
     </div>
 
-    <div class="relative">
-        Absolute
-    </div>
-
-</div>
-
-
-<!-- Fixed button -->
-<div class="fixed">
-    Fixed
-</div>
-
-
-</body>
+    <!-- Fixed button -->
+    <div class="fixed">Fixed</div>
+  </body>
 </html>

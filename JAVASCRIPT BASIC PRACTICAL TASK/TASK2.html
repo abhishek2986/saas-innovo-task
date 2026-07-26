@@ -20,47 +20,48 @@ Users can remove tasks from the list.
 Filter Tasks
 Users can filter tasks to view only completed or only incomplete tasks. -->
 
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="TASK2.css"/>
-</head>
-<body>
+    <link rel="stylesheet" href="TASK2.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="form">
-    <h1>Task: Simple Task Manager Application</h1>
-    <div id="searchfiled">
-        <select id="search">
-    <option value="">All Tasks</option>
-    <option >Complete Task</option>
-    <option >Incomplete Task</option>
-</select>
-        <br>
-        <br>
-    </div>
-    <div id="inputfiled">
-        <label for="description">Enter a Task description :</label>    
-        <input type="text" id="description"/>
-    </div>
-    <br>
-    <div id="inputfiled">
-        <label for="checkbox">MARK TASK COMPLETED/UNCOMPLETE :</label>
-        <input type="checkbox" id="checkbox"/>
-    </div>
-    <br>
-    
-<div id="submitbtnn">
-    <button type="submit" id="submit">submit</button>
-</div>
-</div>          
+      <div class="form">
+        <h1>Task: Simple Task Manager Application</h1>
+        <div id="searchfiled">
+          <select id="search">
+            <option value="">All Tasks</option>
+            <option>Complete Task</option>
+            <option>Incomplete Task</option>
+          </select>
+          <br />
+          <br />
+        </div>
+        <div id="inputfiled">
+          <label for="description">Enter a Task description :</label>
+          <input type="text" id="description" />
+        </div>
+        <br />
+        <div id="inputfiled">
+          <label for="checkbox">MARK TASK COMPLETED/UNCOMPLETE :</label>
+          <input type="checkbox" id="checkbox" />
+        </div>
+        <br />
 
-<p id="tasklist"></p>
+        <div id="submitbtnn">
+          <button type="submit" id="submit">submit</button>
+        </div>
+      </div>
+      <br />
+
+      <h3 id="taskcontain_heading"></h3>
+      <br />
+      <p id="tasklist"></p>
     </div>
     <script src="TASK2.js"></script>
-</body>
+  </body>
 </html>
