@@ -6,9 +6,37 @@ Keyframes: The CSS at-rule @keyframes controls the intermediate steps in a CSS a
 <!doctype html>
 <html>
   <head>
-    <link rel="stylesheet" href="P10.css" />
+    <style>
+      .box {
+  width: 100px;
+  height: 100px;
+  background: blue;
+  animation: move 3s infinite;
+}
+
+@keyframes move {
+  0% {
+    margin-left: 0;
+  }
+
+  50% {
+    margin-left: 150px;
+    background: green;
+  }
+
+  100% {
+    margin-left: 300px;
+    background: red;
+  }
+}
+
+h1{
+  color : #6a1010
+}
+    </style>
   </head>
   <body>
+    <h1>Task10 : Implement a simple CSS animation on a webpage element.</h1>
     <div class="box"></div>
   </body>
 </html>

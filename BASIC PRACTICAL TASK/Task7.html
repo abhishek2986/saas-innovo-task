@@ -3,15 +3,43 @@ Objective: Design a card component with an image, title, description, and button
 Definitions:
 Card Component: A UI component that groups related information in a flexible and extensible container.
 Component Styling: The use of CSS to style reusable UI components consistently. -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design a card component with an image, title, description, and button.</title>
-    <link rel="stylesheet" href="P7.css"/>
+    
+    <style>
+    .card-group {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Space between cards */
+
+}
+
+.card {
+flex:1;
+    background: lightblue;
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+img{
+    height: 200px;
+    width:100%;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 60px;
+    color: #6a1010;
+}
+</style>
+
 </head>
 <body>
+    <h1>Task7 : Design a card component with an image, title, description, and button. </h1>
   <section>
     <div class="card-group">
         <div class="card">
