@@ -1,0 +1,63 @@
+<!-- 13. Music Player with Playlist
+• Task: Build a music player application that plays songs asynchronously and manages playlists.
+• Requirements:
+Use callbacks to handle song playback events (play, pause, stop).
+Implement features such as adding/removing songs from playlists and shuffling songs.
+Display current song information and playlist dynamically. -->
+
+<!-- Music Player
+
+No Song Playing
+
+[ Audio Player ]
+
+Play
+Pause
+Stop
+Shuffle Playlist
+
+------------------------
+
+Playlist
+
+Song One
+Song Two
+Song Three
+
+------------------------
+
+Song Name [________]
+
+Song Path [________]
+
+Add Song -->
+
+<!doctype html>
+<html>
+  <head>
+    <title>Music Player</title>
+    <link rel="stylesheet" href="TASK13.css" />
+  </head>
+  <body>
+    <h1>Music Player Task</h1>
+
+    <h2 id="currentSong">current song : none</h2>
+
+    <button id="play">Play</button>
+    <button id="pause">Pause</button>
+    <button id="stop">Stop</button>
+    <button id="shuffle">Shuffle</button>
+
+    <br /><br />
+    <br />
+    <label for="songName">Add Song to Playlist :</label>
+    <input type="text" id="songName" placeholder="Enter song name" />
+    <input type="text" id="songPath" placeholder="Enter song path " />
+    <button id="addSong">Add Song</button>
+    <br /><br />
+    <hr />
+    <ul id="playlist"></ul>
+    <hr />
+    <script src="TASK13.js"></script>
+  </body>
+</html>
