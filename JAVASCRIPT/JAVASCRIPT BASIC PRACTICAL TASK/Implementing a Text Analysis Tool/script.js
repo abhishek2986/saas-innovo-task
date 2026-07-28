@@ -12,7 +12,7 @@ submit.onclick = function () {
   character_count.innerHTML = `■ <strong>Character count :</strong> ${char_count}`;
 
   // ==================== Word Frequency ====================
-
+frequency_of_eachword.innerHTML=""
   const h3 = document.createElement("h3");
   h3.textContent = "Frequency of each word : ";
   frequency_of_eachword.append(h3);

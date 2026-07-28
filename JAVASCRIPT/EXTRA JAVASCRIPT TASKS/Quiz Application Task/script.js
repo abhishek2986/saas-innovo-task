@@ -1,5 +1,5 @@
-import { questions } from "../questions.js";
-
+import { questions } from "./questions.js";
+console.log(questions);
 const question = document.getElementById("question");
 const answers = document.getElementById("answers");
 const submitBtn = document.getElementById("submit-btn");
@@ -32,7 +32,9 @@ function displayQuestion(index) {
 // Select Answer
 answers.addEventListener("click", function (event) {
   if (event.target.tagName === "BUTTON") {
-    selectedAnswer = event.target.textContent;
+    const answer =event.target.textContent.split(" : ")[1];
+
+    selectedAnswer = answer;
 
     // Remove previous selection
     document.querySelectorAll("#answers button").forEach((btn) => {

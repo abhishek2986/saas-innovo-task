@@ -39,7 +39,7 @@ submit_button.onclick = function () {
   }
 
   //Increase score if userinput match with random number
-  if (parseInt(inputtext.value) == 22) {
+  if (parseInt(inputtext.value) == random_number){
     finalscore = score;
     alert(`Play again !
     User score : ${finalscore}
