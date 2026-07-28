@@ -1,0 +1,54 @@
+<!-- 13. Music Player with Playlist
+• Task: Build a music player application that plays songs asynchronously and manages playlists.
+• Requirements:
+Use callbacks to handle song playback events (play, pause, stop).
+Implement features such as adding/removing songs from playlists and shuffling songs.
+Display current song information and playlist dynamically. -->
+
+<!doctype html>
+<html>
+  <head>
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>
+      Music Player Task
+      <img
+        src=".../../../../HTML Practical Tasks/images/music.png"
+        height="30px"
+        width="30px"
+        alt="music_icon"
+      />
+    </h1>
+
+    <!-- //we can add image here later  -->
+
+    <img id="songImage" width="200px" height="200px" />
+    <h2 id="currentSong">current song : none</h2>
+
+    <audio id="audioPlayer"></audio>
+
+    <!-- //control buttons  -->
+    <button id="play">Play</button>
+    <button id="pause">Pause</button>
+    <button id="stop">Stop</button>
+    <button id="shuffle">Shuffle</button>
+
+    <br /><br />
+    <br />
+
+    <!-- //playlist  -->
+    <label for="songName"><strong>Add Song to Playlist :</strong></label>
+    <input type="text" id="songName" placeholder="Enter song name" />
+    <input type="text" id="songPath" placeholder="Enter song path (url) " />
+    <input type="text" id="songImg" placeholder="Enter song image (url) " />
+    <button id="addSong">Add Song</button>
+    <br /><br />
+    <hr />
+    <h2>Playlist :</h2>
+    <ul id="playlist"></ul>
+    <hr />
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!-- Countdown Timer
+Task: Create a countdown timer that counts down from a given number of seconds.
+Requirements:
+Use setInterval to decrement the countdown value every second.
+Display the remaining time on the webpage.
+Stop the countdown when it reaches zero and display a message. -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1>Countdown Timer</h1>
+      <div id="countdown_timer">
+        <label for="inputfield">Enter a numer : </label>
+        <input type="number" id="inputfield" />
+        <br />
+        <br />
+        <button type="submit" id="submit">Click me to Start Countdown</button>
+      </div>
+
+      <p id="timer_result"></p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

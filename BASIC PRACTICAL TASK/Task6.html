@@ -3,41 +3,44 @@ Objective: Set a background image for a webpage and apply styling.
 Definitions:
 Background Image: An image set as the background of an element using CSS.
 CSS Background Properties: Properties used to control the background of an element, such as background-image, background-size, and background-position. -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 6: Add a Background Image</title>
     <style>
-    body {
-    background-image: url("../HTML Practical Tasks/images/photo-1449824913935-59a10b8d2000.avif"); /* Change the path if needed */
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
-    background-attachment: fixed;
+      body {
+        background-image: url("../HTML Practical Tasks/images/photo-1449824913935-59a10b8d2000.avif"); /* Change the path if needed */
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+        background-attachment: fixed;
 
-    margin: 0;
-    height: 100vh;
+        margin: 0;
+        height: 100vh;
+        text-shadow: 2px 2px 8px #000;
 
-    color: rgb(0, 87, 142);
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
+        color: #f8f9fa;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
 
-h1 {
-    padding-top: 100px;
-    color: rgb(209, 209, 107);
-}
-P{
-    color: rgb(0, 159, 227);
-    font-weight: bold;
-}
-</style>
-</head>
-<body> 
+      h1 {
+        padding-top: 100px;
+        color: #ffd54f;
+        text-shadow: 2px 2px 8px #000;
+      }
+      P {
+        color: #f8f9fa;
+        font-weight: bold;
+        text-shadow: 2px 2px 8px #000;
+      }
+    </style>
+  </head>
+  <body>
     <h1>Task6 : Set a background image for a webpage and apply styling.</h1>
     <h2>Welcome</h2>
     <p>This webpage has a background image.</p>
-</body>
+  </body>
 </html>

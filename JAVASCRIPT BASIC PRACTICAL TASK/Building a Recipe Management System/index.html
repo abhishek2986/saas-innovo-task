@@ -1,0 +1,57 @@
+<!-- Practise Task for array
+Task: Building a Recipe Management System
+Brief Description: You are tasked with building a Recipe Management System using JavaScript. This system will allow users to manage recipes by adding, editing, deleting, and listing recipes. It will include features for categorizing recipes, searching by ingredients, and saving recipes to local storage. Asynchronous operations will simulate fetching and saving data, and error handling will be implemented to manage potential issues gracefully. -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🍽️ Recipe Management System</h1>
+
+      <!-- Add Recipe -->
+      <div class="form">
+        <input type="text" id="inputtext" placeholder="Enter Recipe Name" />
+
+        <input type="text" id="ingredients" placeholder="Enter Ingredients" />
+
+        <select id="category">
+          <option value="">Select Category</option>
+          <option>Indian</option>
+          <option>Italian</option>
+          <option>Chinese</option>
+          <option>Dessert</option>
+        </select>
+
+        <button id="submitbtn">Add Recipe</button>
+      </div>
+
+      <!-- Search -->
+      <div class="search">
+        <input
+          type="text"
+          id="searchIngredient"
+          placeholder="Search by Ingredient"
+        />
+
+        <select id="filterCategory">
+          <option value="">All Categories</option>
+          <option>Indian</option>
+          <option>Italian</option>
+          <option>Chinese</option>
+          <option>Dessert</option>
+        </select>
+      </div>
+
+      <!-- Recipe List -->
+      <ul id="recipelist"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -9,55 +9,55 @@ CSS Positioning: The use of CSS properties like position, top, left, z-index to 
   <head>
     <title>Task 9: Create a Dropdown Menu</title>
     <style>
-    .dropdown {
-  position: relative;
-  display: inline-block;
-}
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
 
-.menu {
-  display: none;
-  position: absolute;
-  background: lightgray;
-}
+      .menu {
+        display: none;
+        position: absolute;
+        background: lightgray;
+      }
 
-.dropdown:hover .menu {
-  display: block;
-}
+      .dropdown:hover .menu {
+        display: block;
+      }
 
-.menu a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: black;
-}
+      .menu a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+      }
 
-.menu a:hover {
-  background: gray;
-  color: white;
-}
-#dropdown_container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top:  400px; ;
-}
-#button{
-  height: 50px;
-  width: 100px;
-}
-h1{
-  color: #6a1010;
-}
+      .menu a:hover {
+        background: gray;
+        color: white;
+      }
+      #dropdown_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 200px;
+      }
 
-</style>
+      #button {
+        height: 50px;
+        width: 100px;
+      }
+      h1 {
+        color: #6a1010;
+      }
+    </style>
   </head>
   <body>
     <div id="dropdown_container">
-<h1>Task9 : Create a Dropdown Menu with CSS</h1>
+      <h1>Task9 : Create a Dropdown Menu with CSS</h1>
       <div class="dropdown">
         <button id="button">Menu</button>
-        
+
         <div class="menu">
           <a href="#">Home</a>
           <a href="#">About</a>

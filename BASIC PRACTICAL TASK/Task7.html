@@ -4,76 +4,132 @@ Definitions:
 Card Component: A UI component that groups related information in a flexible and extensible container.
 Component Styling: The use of CSS to style reusable UI components consistently. -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 7: Create a Card Component</title>
-    
+
     <style>
-    .card-group {
-    display: flex;
-    flex-direction: row;
-    gap: 20px; /* Space between cards */
+      .card-group {
+        display: flex;
+        flex-direction: row;
+        gap: 20px; /* Space between cards */
+      }
 
-}
+      .card {
+        flex: 1;
+        background: lightblue;
+        box-sizing: border-box;
+        border: 2px solid black;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: justify;
+        line-height: 1.5;
+      }
+      img {
+        height: 200px;
+        width: 100%;
+        border-radius: 10px;
+        border: 2px solid black;
+      }
 
-.card {
-flex:1;
-    background: lightblue;
-    box-sizing: border-box;
-    border: 2px solid black;
-}
-img{
-    height: 200px;
-    width:100%;
-}
-
-h1{
-    text-align: center;
-    margin-bottom: 60px;
-    color: #6a1010;
-}
-</style>
-
-</head>
-<body>
-    <h1>Task7 : Design a card component with an image, title, description, and button. </h1>
-  <section>
-    <div class="card-group">
+      h1 {
+        text-align: center;
+        margin-bottom: 60px;
+        color: #6a1010;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Task7 : Design a card component with an image, title, description, and
+      button.
+    </h1>
+    <section>
+      <div class="card-group">
         <div class="card">
-            <img src="../HTML Practical Tasks/images/download.jpg" alt="img1" height="100px" width="100px">
-            <p>Name: wireless Headphone</p>
-            <p>price: 700/- ruppes only</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora alias error eveniet soluta possimus quia quos sit sint eligendi ad ipsa impedit fuga neque, dolor consectetur distinctio aperiam minus dicta.</p>
+          <img
+            src="../HTML Practical Tasks/images/download.jpg"
+            alt="img1"
+            height="100px"
+            width="100px"
+          />
+          <p><strong>Name:</strong> wireless Headphone</p>
+          <p><strong>Price:</strong> 700/- ruppes only</p>
+          <p>
+            <strong>Description:</strong> Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Tempora alias error eveniet soluta possimus quia
+            quos sit sint eligendi ad ipsa impedit fuga neque, dolor consectetur
+            distinctio aperiam minus dicta.
+          </p>
         </div>
-         <div class="card">
-            <img src="../HTML Practical Tasks/images/photo-1449824913935-59a10b8d2000.avif" alt="img1" height="100px" width="100px">
-            <p>Name: wireless Headphone</p>
-            <p>price: 700/- ruppes only</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora alias error eveniet soluta possimus quia quos sit sint eligendi ad ipsa impedit fuga neque, dolor consectetur distinctio aperiam minus dicta.</p>
+        <div class="card">
+          <img
+            src="../HTML Practical Tasks/images/photo-1449824913935-59a10b8d2000.avif"
+            alt="img1"
+            height="100px"
+            width="100px"
+          />
+          <p><strong>Name:</strong> wireless Headphone</p>
+          <p><strong>Price:</strong> 700/- ruppes only</p>
+          <p>
+            <strong>Description:</strong> Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Tempora alias error eveniet soluta possimus quia
+            quos sit sint eligendi ad ipsa impedit fuga neque, dolor consectetur
+            distinctio aperiam minus dicta.
+          </p>
         </div>
-         <div class="card">
-            <img src="../HTML Practical Tasks/images/photo-1471899236350-e3016bf1e69e.avif" alt="img1" height="100px" width="100px">
-            <p>Name: wireless Headphone</p>
-            <p>price: 700/- ruppes only</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora alias error eveniet soluta possimus quia quos sit sint eligendi ad ipsa impedit fuga neque, dolor consectetur distinctio aperiam minus dicta.</p>
+        <div class="card">
+          <img
+            src="../HTML Practical Tasks/images/photo-1471899236350-e3016bf1e69e.avif"
+            alt="img1"
+            height="100px"
+            width="100px"
+          />
+          <p><strong>Name:</strong> wireless Headphone</p>
+          <p><strong>Price:</strong> 700/- ruppes only</p>
+          <p>
+            <strong>Description:</strong> Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Tempora alias error eveniet soluta possimus quia
+            quos sit sint eligendi ad ipsa impedit fuga neque, dolor consectetur
+            distinctio aperiam minus dicta.
+          </p>
         </div>
-         <div class="card">
-            <img src="../HTML Practical Tasks/images/download.jpg" alt="img1" height="100px" width="100px">
-            <p>Name: wireless Headphone</p>
-            <p>price: 700/- ruppes only</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora alias error eveniet soluta possimus quia quos sit sint eligendi ad ipsa impedit fuga neque, dolor consectetur distinctio aperiam minus dicta.</p>
+        <div class="card">
+          <img
+            src="../HTML Practical Tasks/images/download.jpg"
+            alt="img1"
+            height="100px"
+            width="100px"
+          />
+          <p><strong>Name:</strong>wireless Headphone</p>
+          <p><strong>Price:</strong> 700/- ruppes only</p>
+          <p>
+            <strong>Description:</strong> Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Tempora alias error eveniet soluta possimus quia
+            quos sit sint eligendi ad ipsa impedit fuga neque, dolor consectetur
+            distinctio aperiam minus dicta.
+          </p>
         </div>
-         <div class="card">
-            <img src="../HTML Practical Tasks/images/download.jpg" alt="img1" height="100px" width="100px">
-            <p>Name: wireless Headphone</p>
-            <p>price: 700/- ruppes only</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora alias error eveniet soluta possimus quia quos sit sint eligendi ad ipsa impedit fuga neque, dolor consectetur distinctio aperiam minus dicta.</p>
+        <div class="card">
+          <img
+            src="../HTML Practical Tasks/images/download.jpg"
+            alt="img1"
+            height="100px"
+            width="100px"
+          />
+          <p><strong>Name:</strong> wireless Headphone</p>
+          <p><strong>Price:</strong> 700/- ruppes only</p>
+          <p>
+            <strong>Description:</strong> Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Tempora alias error eveniet soluta possimus quia
+            quos sit sint eligendi ad ipsa impedit fuga neque, dolor consectetur
+            distinctio aperiam minus dicta.
+          </p>
         </div>
-
-    </div>
-  </section>
-</body>
+      </div>
+    </section>
+  </body>
 </html>

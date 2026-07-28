@@ -1,0 +1,43 @@
+<!-- Practical Task: Interactive Navigation Bar
+Objective: Create an interactive navigation bar with dropdown menus using HTML and CSS.
+Description: In this practical task, you will build a navigation bar that includes links to different sections of a website. You will add dropdown menus to some of the links for additional navigation options. CSS will be used to style the navigation bar and add hover effects to the dropdown menus. This project will help you practice creating interactive elements and applying CSS for enhanced user experience.
+
+ -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practical Task: Interactive Navigation Bar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul class="navbar">
+        <li><a href="#">Home</a></li>
+
+        <li class="dropdown">
+          <a href="#">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">UI/UX Design</a></li>
+            <li><a href="#">SEO</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">Products</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Laptops</a></li>
+            <li><a href="#">Mobiles</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
