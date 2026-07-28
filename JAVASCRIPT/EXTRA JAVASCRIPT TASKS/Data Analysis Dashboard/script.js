@@ -1,253 +1,202 @@
-import { dataset } from "./dataset"
-console.log(dataset);
+import { dataset } from "./dataset.js";
 
-const totalSalesElement = document.getElementById("totalSales");
-const totalProfitElement = document.getElementById("totalProfit");
-const avgSalesElement = document.getElementById("avgSales");
-const avgProfitElement = document.getElementById("avgProfit");
-const maxSaleElement = document.getElementById("maxSale");
-const minSaleElement = document.getElementById("minSale");
-const tableBody = document.getElementById("tableBody");
+const totalSalesEl = document.getElementById("totalSales");
+const totalProfitEl = document.getElementById("totalProfit");
+const avgSalesEl = document.getElementById("avgSales");
+const avgProfitEl = document.getElementById("avgProfit");
+const maxSaleEl = document.getElementById("maxSale");
+const minSaleEl = document.getElementById("minSale");
+const tbody = document.getElementById("tableBody");
+
 const monthFilter = document.getElementById("monthFilter");
 const regionFilter = document.getElementById("regionFilter");
 const categoryFilter = document.getElementById("categoryFilter");
-const searchBox = document.getElementById("searchBox");
+const searchInput = document.getElementById("searchBox");
 const resetBtn = document.getElementById("resetBtn");
 
+let barChart, lineChart, pieChart, doughnutChart;
 
-// DISPLAY DASHBOARD DATA
+function updateDashboard(data) {
+  let totalSales = 0;
+  let totalProfit = 0;
+  let maxSale = 0;
+  let minSale = 0;
 
+  // set initial values for min/max
+  if (data.length > 0) {
+    maxSale = data[0].sales;
+    minSale = data[0].sales;
+  }
 
-function updateDashboard(data){
+  // calculate totals
+  for (let i = 0; i < data.length; i++) {
+    let item = data[i];
+    totalSales += item.sales;
+    totalProfit += item.profit;
 
-
-    let totalSales = 0;
-    let totalProfit = 0;
-
-    let maxSale = data[0]?.sales || 0;
-    let minSale = data[0]?.sales || 0;
-
-
-    // LOOP FOR CALCULATIONS
-
-    for(let item of data){
-
-        totalSales += item.sales;
-
-        totalProfit += item.profit;
-
-        if(item.sales > maxSale){
-
-            maxSale = item.sales;
-
-        }
-
-
-        if(item.sales < minSale){
-
-            minSale = item.sales;
-
-        }
-
-
+    if (item.sales > maxSale) {
+      maxSale = item.sales;
     }
+    if (item.sales < minSale) {
+      minSale = item.sales;
+    }
+  }
 
+  let avgSales = 0;
+  let avgProfit = 0;
 
-    let averageSales = data.length ? 
-    totalSales / data.length : 0;
+  if (data.length > 0) {
+    avgSales = totalSales / data.length;
+    avgProfit = totalProfit / data.length;
+  }
 
+  // update cards
+  totalSalesEl.innerText = "$" + totalSales.toLocaleString();
+  totalProfitEl.innerText = "$" + totalProfit.toLocaleString();
+  avgSalesEl.innerText = "$" + Math.round(avgSales).toLocaleString();
+  avgProfitEl.innerText = "$" + Math.round(avgProfit).toLocaleString();
+  maxSaleEl.innerText = "$" + maxSale.toLocaleString();
+  minSaleEl.innerText = "$" + minSale.toLocaleString();
 
-    let averageProfit = data.length ?
-    totalProfit / data.length : 0;
-
-
-
-    // UPDATE KPI CARDS
-
-    totalSalesElement.innerHTML =
-    "$" + totalSales.toLocaleString();
-
-
-    totalProfitElement.innerHTML =
-    "$" + totalProfit.toLocaleString();
-
-
-    avgSalesElement.innerHTML =
-    "$" + Math.round(averageSales).toLocaleString();
-
-
-    avgProfitElement.innerHTML =
-    "$" + Math.round(averageProfit).toLocaleString();
-
-
-    maxSaleElement.innerHTML =
-    "$" + maxSale.toLocaleString();
-
-
-    minSaleElement.innerHTML =
-    "$" + minSale.toLocaleString();
-
-
-
-    displayTable(salesData);
-
-
-    updateCharts(salesData);
-
+  renderTable(data);
+  renderCharts(data);
 }
 
+function renderTable(data) {
+  tbody.innerHTML = "";
 
-
-// DISPLAY TABLE
-
-
-function displayTable(data){
-
-
-    tableBody.innerHTML = "";
-
-
-    for(let item of data){
-
-
-        let row = `
-
-        <tr>
-
-        <td>${item.id}</td>
-
-        <td>${item.month}</td>
-
-        <td>${item.region}</td>
-
-        <td>${item.category}</td>
-
-        <td>${item.product}</td>
-
-        <td>$${item.sales.toLocaleString()}</td>
-
-        <td>$${item.profit.toLocaleString()}</td>
-
-
-        </tr>
-
-        `;
-
-
-        tableBody.innerHTML += row;
-
-
-    }
-
-
+  data.forEach((item) => {
+    let tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${item.id}</td>
+      <td>${item.month}</td>
+      <td>${item.region}</td>
+      <td>${item.category}</td>
+      <td>${item.product}</td>
+      <td>$${item.sales.toLocaleString()}</td>
+      <td>$${item.profit.toLocaleString()}</td>
+    `;
+    tbody.appendChild(tr);
+  });
 }
 
-
-
-// FILTER FUNCTION
-
-
-
-function filterData(){
-
-
-    let selectedMonth = monthFilter.value;
-
-    let selectedRegion = regionFilter.value;
-
-    let selectedCategory = categoryFilter.value;
-
-    let searchText = searchBox.value.toLowerCase();
-
-
-
-    let filteredData = [];
-
-
-    // LOOP THROUGH DATA
-
-    for(let item of salesData){
-
-        let matchMonth =
-        selectedMonth === "All" ||
-        item.month === selectedMonth;
-
-        let matchRegion =
-        selectedRegion === "All" ||
-        item.region === selectedRegion;
-
-        let matchCategory =
-        selectedCategory === "All" ||
-        item.category === selectedCategory;
-
-        let matchSearch =
-        item.product
-        .toLowerCase()
-        .includes(searchText);
-
-
-        if(
-            matchMonth &&
-            matchRegion &&
-            matchCategory &&
-            matchSearch
-        ){
-
-            filteredData.push(item);
-
-        }
-
-
+// helper function to manually group chart data
+function groupData(data, key) {
+  let result = {};
+  for (let i = 0; i < data.length; i++) {
+    let val = data[i][key];
+    if (!result[val]) {
+      result[val] = 0;
     }
-
-
-    updateDashboard(filteredData);
-
-
+    result[val] += data[i].sales;
+  }
+  return result;
 }
 
+function renderCharts(data) {
+  let products = [];
+  let productSales = [];
 
+  for (let i = 0; i < data.length; i++) {
+    products.push(data[i].product);
+    productSales.push(data[i].sales);
+  }
 
+  let monthData = groupData(data, "month");
+  let categoryData = groupData(data, "category");
+  let regionData = groupData(data, "region");
 
-// EVENT LISTENERS
+  // get rid of old charts if they exist so they don't overlap
+  if (barChart) barChart.destroy();
+  if (lineChart) lineChart.destroy();
+  if (pieChart) pieChart.destroy();
+  if (doughnutChart) doughnutChart.destroy();
 
+  barChart = new Chart(document.getElementById("barChart"), {
+    type: "bar",
+    data: {
+      labels: products,
+      datasets: [
+        { label: "Sales ($)", data: productSales, backgroundColor: "#2563eb" },
+      ],
+    },
+  });
 
-monthFilter.addEventListener("change",filterData);
+  lineChart = new Chart(document.getElementById("lineChart"), {
+    type: "line",
+    data: {
+      labels: Object.keys(monthData),
+      datasets: [
+        {
+          label: "Sales ($)",
+          data: Object.values(monthData),
+          borderColor: "#10b981",
+          fill: false,
+          tension: 0.1,
+        },
+      ],
+    },
+  });
 
+  pieChart = new Chart(document.getElementById("pieChart"), {
+    type: "pie",
+    data: {
+      labels: Object.keys(categoryData),
+      datasets: [
+        {
+          data: Object.values(categoryData),
+          backgroundColor: ["#ef4444", "#3b82f6", "#f59e0b"],
+        },
+      ],
+    },
+  });
 
-regionFilter.addEventListener("change",filterData);
+  doughnutChart = new Chart(document.getElementById("doughnutChart"), {
+    type: "doughnut",
+    data: {
+      labels: Object.keys(regionData),
+      datasets: [
+        {
+          data: Object.values(regionData),
+          backgroundColor: ["#8b5cf6", "#ec4899", "#14b8a6", "#f97316"],
+        },
+      ],
+    },
+  });
+}
 
+function handleFilter() {
+  let m = monthFilter.value;
+  let r = regionFilter.value;
+  let c = categoryFilter.value;
+  let search = searchInput.value.toLowerCase();
 
-categoryFilter.addEventListener("change",filterData);
+  let filtered = dataset.filter((item) => {
+    let matchMonth = m === "All" || item.month === m;
+    let matchRegion = r === "All" || item.region === r;
+    let matchCategory = c === "All" || item.category === c;
+    let matchSearch = item.product.toLowerCase().includes(search);
 
+    return matchMonth && matchRegion && matchCategory && matchSearch;
+  });
 
-searchBox.addEventListener("keyup",filterData);
+  updateDashboard(filtered);
+}
 
+// event listeners
+monthFilter.addEventListener("change", handleFilter);
+regionFilter.addEventListener("change", handleFilter);
+categoryFilter.addEventListener("change", handleFilter);
+searchInput.addEventListener("keyup", handleFilter);
 
-// RESET FILTERS
+resetBtn.addEventListener("click", () => {
+  monthFilter.value = "All";
+  regionFilter.value = "All";
+  categoryFilter.value = "All";
+  searchInput.value = "";
 
-
-resetBtn.addEventListener("click",()=>{
-
-
-    monthFilter.value="All";
-
-    regionFilter.value="All";
-
-    categoryFilter.value="All";
-
-    searchBox.value="";
-
-
-    updateDashboard(salesData);
-
-
+  updateDashboard(dataset);
 });
 
-
-
-
-// INITIAL LOAD
-
-
-updateDashboard(salesData);
+// start the app
+updateDashboard(dataset);

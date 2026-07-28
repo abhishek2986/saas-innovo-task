@@ -1,18 +1,30 @@
 ## 📖 Project Overview
 
-A simple **Dynamic Form Builder** built using **HTML, CSS, and JavaScript**. The application allows users to create form elements dynamically by entering the number of elements and selecting the type of element through prompts. Labels and various input fields are generated dynamically without modifying the HTML.
+📖 Project Overview
+
+A simple **Dynamic Form Builder** built using **HTML, CSS, and JavaScript**. The application allows users to dynamically generate form elements based on their input. Users can choose different field types, add labels, create select options, and generate a custom form without modifying the HTML.
 
 ────────────────────────────────────────────────────────
 
 ## ✨ Features
 
-- Create form elements dynamically
-- Generate labels
-- Generate different input fields
-- Support for text, email, password, number, radio, checkbox, and other input types
-- Create radio buttons with custom name and value
-- Create checkboxes with custom values
-- Prevent page reload on form submission
+- Generate form elements dynamically
+- Support for multiple input types:
+  - Text
+  - Email
+  - Password
+  - Number
+  - Date
+  - Checkbox
+  - Radio Button
+  - Textarea
+  - Select Dropdown
+  - Button
+- Add custom labels for each field
+- Create dropdowns with custom options
+- Generate forms without editing HTML
+- Display a success message when the generated button is clicked
+- Simple and interactive user interface
 
 ────────────────────────────────────────────────────────
 
@@ -38,132 +50,98 @@ dynamic-form-builder/
 
 - DOM Manipulation
 - Dynamic Element Creation
-- Forms and Input Elements
 - Event Handling
-- User Input using `prompt()`
-- Conditional Statements
-- HTML Form Handling
-- JavaScript Functions
+- Form Generation
+- JavaScript `switch` Statement
+- Loops (`for`)
+- Working with User Input using `prompt()`
+- Creating Input Fields Dynamically
+- Creating Dropdowns and Options
+- Handling Button Click Events
 
 ────────────────────────────────────────────────────────
 
-## 📝 Example (for testing)
+## 🧪 Example Test Cases (for testing)
 
-Number of elements: 23
+### Test Case 1: Registration Form
 
-Element 1: label
-Label Text: Name
+**Input**
 
-Element 2: input
-Input Type: text
+- Number of Fields: 4
+- Field 1: Text → Label: Name
+- Field 2: Email → Label: Email
+- Field 3: Password → Label: Password
+- Field 4: Button → Text: Register
 
-Element 3: label
-Label Text: Password
+**Generated Output**
 
-Element 4: input
-Input Type: password
+Name
+[____________________]
 
-Element 5: label
-Label Text: Email
+Email
+[____________________]
 
-Element 6: input
-Input Type: email
+Password
+[____________________]
 
-Element 7: label
-Label Text: Age
+[ Register ]
 
-Element 8: input
-Input Type: number
+When the **Register** button is clicked, a success message is displayed.
 
-Element 9: label
-Label Text: Gender
+### Test Case 2: Contact Form
 
-Element 10: input
-Input Type: radio
-Name: gender
-Value: male
+**Input**
 
-Element 11: input
-Input Type: radio
-Name: gender
-Value: female
+- Number of Fields: 5
+- Field 1: Text → Label: Full Name
+- Field 2: Email → Label: Email Address
+- Field 3: Number → Label: Mobile Number
+- Field 4: Textarea → Label: Message
+- Field 5: Button → Text: Send Message
 
-Element 12: label
-Label Text: Skills
+**Generated Output**
 
-Element 13: input
-Input Type: checkbox
-Value: HTML
+Full Name
+[____________________]
 
-Element 14: input
-Input Type: checkbox
-Value: CSS
+Email Address
+[____________________]
 
-Element 15: label
-Label Text: Upload
+Mobile Number
+[____________________]
 
-Element 16: input
-Input Type: file
+Message
++-------------------------+
+| |
+| |
++-------------------------+
 
-Element 17: label
-Label Text: Birthday
+[ Send Message ]
 
-Element 18: input
-Input Type: date
+### Test Case 3: Feedback Form
 
-Element 19: label
-Label Text: Favorite Color
+**Input**
 
-Element 20: input
-Input Type: color
+- Number of Fields: 4
+- Field 1: Text → Label: Name
+- Field 2: Select → Options: Excellent, Good, Average, Poor
+- Field 3: Textarea → Label: Feedback
+- Field 4: Button → Text: Submit Feedback
 
-Element 21: label
-Label Text: Progress
+**Generated Output**
 
-Element 22: input
-Input Type: range
+Name
+[____________________]
 
-Element 23: input
-Input Type: submit
+Rating
+[ Excellent ▼ ]
 
-────────────────────────────────────────────────────────
+Feedback
++-------------------------+
+| |
+| |
++-------------------------+
 
-## ex: we can create this type of form :
-
-<form>
-  Name:
-  <input type="text">
-
-  Password:
-  <input type="password">
-
-  Email:
-  <input type="email">
-
-  Age:
-  <input type="number">
-
-  Gender:
-  <input type="radio" name="gender" value="malef"> Male
-  <input type="radio" name="gender" value="female"> Female
-
-  Skills:
-  <input type="checkbox" value="HTML"> HTML
-  <input type="checkbox" value="CSS"> CSS
-
-  Upload:
-  <input type="file">
-
-  Birthday:
-  <input type="date">
-
-  Favorite Color:
-  <input type="color">
-
-  Progress:
-  <input type="range">
-
-  <input type="submit">
-</form>
+[ Submit Feedback ]
 
 ────────────────────────────────────────────────────────

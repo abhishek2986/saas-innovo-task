@@ -55,9 +55,9 @@ const forward_button = document.getElementById("next");
 const previous_button = document.getElementById("previous");
 
 const images = [
-  "..../../../../HTML Practical Tasks/images/photo-1471899236350-e3016bf1e69e.avif",
-  ".../../../../HTML Practical Tasks/images/photo-1471899236350-e3016bf1e69e.avif",
-  ".../../../../HTML Practical Tasks/images/mountain.webp",
+  "../../../HTML and CSS/HTML Practical Tasks/images/photo-1471899236350-e3016bf1e69e.avif",
+  "../../../HTML and CSS/HTML Practical Tasks/images/photo-1449824913935-59a10b8d2000.avif",
+  "../../../HTML and CSS/HTML Practical Tasks/images/download.jpg",
 ];
 
 // Track the currently displayed image

@@ -1,41 +1,48 @@
-#form_builder{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 30px;
 }
-/* <form>
-  Name:
-  <input type="text">
 
-  Password:
-  <input type="password">
+h1 {
+  text-align: center;
+}
 
-  Email:
-  <input type="email">
+form {
+  width: 350px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px gray;
+}
 
-  Age:
-  <input type="number">
+.form-group {
+  margin-bottom: 15px;
+}
 
-  Gender:
-  <input type="radio" name="gender" value="male"> Male
-  <input type="radio" name="gender" value="female"> Female
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
 
-  Skills:
-  <input type="checkbox" value="HTML"> HTML
-  <input type="checkbox" value="CSS"> CSS
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
 
-  Upload:
-  <input type="file">
+button {
+  padding: 10px 20px;
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
 
-  Birthday:
-  <input type="date">
-
-  Favorite Color:
-  <input type="color">
-
-  Progress:
-  <input type="range">
-
-  <input type="submit">
-</form> */
+button:hover {
+  background: darkgreen;
+}

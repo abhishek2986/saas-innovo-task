@@ -1,58 +1,97 @@
-// Get the form container where elements will be added dynamically
-const form_builder = document.getElementById("form_builder");
+const form = document.getElementById("formBuilder");
 
-// Get the form element
-const form = document.getElementById("form");
+// Ask total number of elements
+let totalElements = parseInt(prompt("How many form elements do you want?"));
 
-// Prevent the form from reloading the page when submitted
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-});
+for (let i = 1; i <= totalElements; i++) {
+  let type = prompt(
+    `Enter type of element ${i}
 
-// Ask the user how many form elements they want to create
-let person = prompt("Please enter the number of element");
+text
+email
+password
+number
+date
+checkbox
+radio
+textarea
+select
+button`,
+  ).toLowerCase();
 
-// Create the specified number of form elements
-for (i = 0; i < person; i++) {
-  // Ask which element should be created (label or input)
-  let element = prompt("Please enter which element is to create :");
+  let group = document.createElement("div");
+  group.className = "form-group";
 
-  // -------------------- Create Label --------------------
-  if (element == "label") {
-    const label = document.createElement("label");
-    const labeltext = prompt("Enter the label input text :");
-    label.textContent = labeltext;
-    form_builder.append(label);
+  // Label
+  if (type !== "button") {
+    let label = document.createElement("label");
+    label.textContent = prompt("Enter Label Name:");
+    group.appendChild(label);
   }
 
-  // -------------------- Create Input --------------------
-  if (element == "input") {
-    const input = document.createElement("input");
-    console.log("input");
-    const input_type = prompt("please enter type of input :");
-    input.type = input_type;
+  let element;
 
-    // ---------- Radio Button ----------
-    if (input_type == "radio") {
-      const nameatr = prompt("please enter the name attribute of radio button");
-      input.name = nameatr;
-      const values = prompt("please enter the value of radio button :");
-      input.value = values;
-      const value = values;
-      form_builder.append(input);
-      form_builder.append(value);
-    }
+  switch (type) {
+    case "text":
+    case "email":
+    case "password":
+    case "number":
+    case "date":
+      element = document.createElement("input");
+      element.type = type;
+      break;
 
-    // ---------- Checkbox ----------
-    else if (input_type == "checkbox") {
-      const values = prompt("please enter the value of checkbox button :");
-      input.value = values;
-      const value = values;
-      form_builder.append(input);
-      form_builder.append(value);
-    } else {
-      input.type = input_type;
-      form_builder.append(input);
-    }
+    case "checkbox":
+      element = document.createElement("input");
+      element.type = "checkbox";
+      element.style.width = "auto";
+      break;
+
+    case "radio":
+      element = document.createElement("input");
+      element.type = "radio";
+      element.name = "radioGroup";
+      element.style.width = "auto";
+      break;
+
+    case "textarea":
+      element = document.createElement("textarea");
+      element.rows = 4;
+      break;
+
+    case "select":
+      element = document.createElement("select");
+
+      let totalOptions = parseInt(prompt("How many options?"));
+
+      for (let j = 1; j <= totalOptions; j++) {
+        let option = document.createElement("option");
+        option.textContent = prompt(`Enter Option ${j}`);
+        option.value = option.textContent;
+
+        element.appendChild(option);
+      }
+
+      break;
+
+    case "button":
+      element = document.createElement("button");
+      element.type = "button";
+      element.textContent = prompt("Enter Button Text");
+      element.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent page refresh
+
+        alert("Form Submitted Successfully!");
+      });
+      break;
+
+    default:
+      alert("Invalid Type! Text input created.");
+      element = document.createElement("input");
+      element.type = "text";
   }
+
+  group.appendChild(element);
+
+  form.appendChild(group);
 }

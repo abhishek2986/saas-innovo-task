@@ -15,17 +15,17 @@ let playlist = [
   {
     name: "Namo Namo Shankara",
     path: ".../../../../EXTRA JAVASCRIPT TASKS/Songs/Namo Namo Shankara(PagalWorld).mp3",
-    img: ".../../../../HTML Practical Tasks/images/bholenath.jpg",
+    img: "../../../HTML and CSS/HTML Practical Tasks/images/bholenath.jpg",
   },
   {
     name: "Laut Ke Tujhko Aana Hai - Ganapati Visarjan",
     path: ".../../../../EXTRA JAVASCRIPT TASKS/Songs/Laut Ke Tujhko Aana Hai - Ganapati Visarjan 2025.mp3",
-    img: ".../../../../HTML Practical Tasks/images/ganpati_visarjan.jpg",
+    img: "../../../HTML and CSS/HTML Practical Tasks/images/ganpati_visarjan.jpg",
   },
   {
     name: "Abhi Na Jao Chhod Kar - Ganapati Visarjan",
     path: ".../../../../EXTRA JAVASCRIPT TASKS/Songs/Abhi Na Jao Chhod Kar - Ganapati Visarjan.mp3",
-    img: ".../../../../HTML Practical Tasks/images/ganpati1.jpg",
+    img: "../../../HTML and CSS/HTML Practical Tasks/images/ganpati1.jpg",
   },
 ];
 
@@ -35,7 +35,6 @@ let currentIndex = 0;
 // Load Song
 function loadSong(index) {
   currentIndex = index;
-  // https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3
   audioPlayer.src = playlist[index].path;
   songImage.src = playlist[index].img;
   currentSong.textContent = "Now Playing : " + playlist[index].name;
