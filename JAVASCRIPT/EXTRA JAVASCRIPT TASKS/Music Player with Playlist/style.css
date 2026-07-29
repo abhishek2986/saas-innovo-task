@@ -1,5 +1,8 @@
-#playlist{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+#playlist {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+li:hover {
+  cursor: pointer;
 }

@@ -29,6 +29,25 @@ let playlist = [
   },
 ];
 
+// Available Songs
+const allSongs = [
+  {
+    name: "Namo Namo Shankara",
+    path: "../../../EXTRA JAVASCRIPT TASKS/Songs/Namo Namo Shankara(PagalWorld).mp3",
+    img: "../../../HTML and CSS/HTML Practical Tasks/images/bholenath.jpg",
+  },
+  {
+    name: "Laut Ke Tujhko Aana Hai - Ganapati Visarjan",
+    path: "../../../EXTRA JAVASCRIPT TASKS/Songs/Laut Ke Tujhko Aana Hai - Ganapati Visarjan 2025.mp3",
+    img: "../../../HTML and CSS/HTML Practical Tasks/images/ganpati_visarjan.jpg",
+  },
+  {
+    name: "Abhi Na Jao Chhod Kar - Ganapati Visarjan",
+    path: "../../../EXTRA JAVASCRIPT TASKS/Songs/Abhi Na Jao Chhod Kar - Ganapati Visarjan.mp3",
+    img: "../../../HTML and CSS/HTML Practical Tasks/images/ganpati1.jpg",
+  },
+];
+
 // Store current playing song index
 let currentIndex = 0;
 
@@ -78,6 +97,111 @@ function displayPlaylist() {
   });
 }
 
+// Display Available Songs
+function displayAvailableSongs() {
+  availableSongsList.innerHTML = "";
+
+  allSongs.forEach(function (song) {
+    let li = document.createElement("li");
+
+    li.textContent = song.name + " ";
+
+    let addBtn = document.createElement("button");
+    addBtn.textContent = "Add to Playlist";
+
+    addBtn.onclick = function (event) {
+      event.stopPropagation();
+
+      let exists = playlist.some(function (item) {
+        return item.name === song.name;
+      });
+
+      if (exists) {
+        alert("Song already exists in playlist.");
+        return;
+      }
+
+      playlist.push(song);
+      displayPlaylist();
+    };
+
+    li.appendChild(addBtn);
+    availableSongsList.appendChild(li);
+  });
+}
+
+// Remove Song
+function removeSong(index) {
+  playlist.splice(index, 1);
+
+  if (playlist.length === 0) {
+    audioPlayer.src = "";
+    songImage.src = "";
+    currentSong.textContent = "No Song Playing";
+  } else {
+    loadSong(0);
+  }
+
+  displayPlaylist();
+}
+
+// Play Button
+playBtn.onclick = function () {
+  playSong(function () {
+    alert("Song Playing");
+  });
+};
+
+// Pause Button
+pauseBtn.onclick = function () {
+  pauseSong(function () {
+    alert("Song Paused");
+  });
+};
+
+// Stop Button
+stopBtn.onclick = function () {
+  stopSong(function () {
+    alert("Song Stopped");
+  });
+};
+
+// Shuffle Button
+shuffleBtn.onclick = function () {
+  playlist.sort(function () {
+    return Math.random() - 0.5;
+  });
+
+  displayPlaylist();
+};
+
+// Add New Song
+addSongBtn.onclick = function () {
+  let songName = songNameInput.value.trim();
+  let songPath = songPathInput.value.trim();
+  let songImagePath = SongInput_Image.value.trim();
+
+  if (songName === "" || songPath === "" || songImagePath === "") {
+    alert("Please enter all fields.");
+    return;
+  }
+
+  let newSong = {
+    name: songName,
+    path: songPath,
+    img: songImagePath,
+  };
+
+  playlist.push(newSong);
+  allSongs.push(newSong);
+
+  displayPlaylist();
+  displayAvailableSongs();
+
+  songNameInput.value = "";
+  songPathInput.value = "";
+  SongInput_Image.value = "";
+};
 // Callback Functions
 
 // Play Song
@@ -184,3 +308,4 @@ shuffleBtn.onclick = function () {
 loadSong(currentIndex);
 
 displayPlaylist();
+displayAvailableSongs();
